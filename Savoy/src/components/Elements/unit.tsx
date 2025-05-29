@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import clsx from "clsx";
-import { div } from "framer-motion/client";
 import { BedDouble, Bath, WavesLadder, Car, Bed, ArrowRight, ArrowLeft } from "lucide-react";
 
 const wines = [
