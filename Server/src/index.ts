@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-import { connectToMongoDB } from './config/DB_monggo_config';
+import { connectToMongoDB } from './config/db_monggo_config';
 
 import app from './app';
 
