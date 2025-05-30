@@ -10,7 +10,7 @@ const app = (0, express_1.default)();
 app.use((0, cors_1.default)({
     origin: [
         "http://localhost:3000", "http://localhost:3001",
-        "https://savoy-server.vercel.app"
+        "https://savoy-client.vercel.app",
     ],
     methods: ["POST", "GET", "PATCH", "DELETE", 'PUT', "OPTIONS"],
     credentials: true,
