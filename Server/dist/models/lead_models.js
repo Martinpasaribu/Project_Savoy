@@ -7,7 +7,7 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const LeadSchema = new mongoose_1.default.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    contact: { type: Number, required: true },
+    phone: { type: Number, required: true },
     message: { type: String, required: true },
     isDeleted: {
         type: Boolean,

@@ -6,11 +6,11 @@ export class LeadControllers {
 
         static async  PostLead  (req : any , res:any)  {
 
-            const { email , name, message, contact } = req.body;
+            const { email , name, message, phone } = req.body;
 
             try {
 
-                if( !email || !name || !message ||!contact){
+                if( !email || !name || !message ||!phone){
                     return  res.status(400).json({
                         requestId: uuidv4(), 
                         message: `All Field can't be empty`,
@@ -19,7 +19,7 @@ export class LeadControllers {
                 const lead = await LeadModel.create({
                     name: name,
                     email: email, 
-                    contact: contact, 
+                    phone: phone, 
                     message : message
                 });
 

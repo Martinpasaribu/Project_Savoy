@@ -8,7 +8,12 @@ import axios from 'axios';
 // export const UrlMain = 'https://adhistahan-serve.vercel.app/api/v1'
 
 // export const UrlMain = 'https://api.adhisthanavillas.com/api/v1'
+
 export const UrlMain = 'https://savoy-server.vercel.app/api/v1'
+
+// export const UrlMain = 'http://localhost:5000/api/v1'
+
+
 
 // Konfigurasi untuk server
 

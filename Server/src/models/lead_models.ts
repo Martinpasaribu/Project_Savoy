@@ -4,14 +4,14 @@ import mongoose from 'mongoose';
 interface ILead extends Document{
     name: string,
     email: string,
-    contact: number,
+    phone: number,
     message: string,
 }
 
 const LeadSchema = new mongoose.Schema({
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true },
-    contact: { type: Number, required: true },
+    phone: { type: Number, required: true },
     message: { type: String, required: true },
 
     isDeleted: {

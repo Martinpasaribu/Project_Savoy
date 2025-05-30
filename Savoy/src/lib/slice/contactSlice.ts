@@ -35,7 +35,7 @@ export const addContact = createAsyncThunk<ContactModels,ContactModels,{ rejectV
 
     try {
 
-        const response = await http.post('/lead/get/lead', contact);
+        const response = await http.post('/lead/create/lead', contact);
         return response.data;
 
     } catch (error) {

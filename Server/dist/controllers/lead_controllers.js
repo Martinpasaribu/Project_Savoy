@@ -18,9 +18,9 @@ const lead_models_1 = __importDefault(require("../models/lead_models"));
 class LeadControllers {
     static PostLead(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { email, name, message, contact } = req.body;
+            const { email, name, message, phone } = req.body;
             try {
-                if (!email || !name || !message || !contact) {
+                if (!email || !name || !message || !phone) {
                     return res.status(400).json({
                         requestId: (0, uuid_1.v4)(),
                         message: `All Field can't be empty`,
@@ -29,7 +29,7 @@ class LeadControllers {
                 const lead = yield lead_models_1.default.create({
                     name: name,
                     email: email,
-                    contact: contact,
+                    phone: phone,
                     message: message
                 });
                 res.status(201).json({
