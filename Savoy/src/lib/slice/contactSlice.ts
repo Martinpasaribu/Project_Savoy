@@ -16,7 +16,7 @@ interface RoomState {
 }
 
 interface ErrorResponse {
-  msg: string;
+  message: string;
 }
 
 const initialState: RoomState = {
@@ -43,7 +43,7 @@ export const addContact = createAsyncThunk<ContactModels,ContactModels,{ rejectV
         const axiosError = error as AxiosError<ErrorResponse>;
 
         if (axiosError.response && axiosError.response.data) {
-          const message = axiosError.response.data.msg; 
+          const message = axiosError.response.data.message ||'Gagal menambahkan contact';; 
           return thunkAPI.rejectWithValue(message); 
         }
   

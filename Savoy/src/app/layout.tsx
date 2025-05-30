@@ -4,6 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Providers } from "@/lib/provider";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Layout from "@/components/Layout";
+import { Toaster } from 'react-hot-toast';
+
+
 const geistSans = Geist({
   subsets: ["latin"],
   variable: "--font-geist-sans",
@@ -29,6 +32,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className={`${geistSans.variable} ${geistMono.variable} w-full`}>
         <Providers>
           <ThemeProvider>
+             <Toaster position="bottom-right" />
             <Layout>
               {children}
             </Layout>

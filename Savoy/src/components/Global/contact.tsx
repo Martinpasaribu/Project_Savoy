@@ -5,6 +5,8 @@ import { X } from "lucide-react";
 import { useAppDispatch } from '@/lib/hooks/hooks'
 import { ContactModels } from "@/models/contact_models";
 import { addContact } from "@/lib/slice/contactSlice";
+import toast from 'react-hot-toast';
+
 
 
 interface ContactModalProps {
@@ -14,7 +16,8 @@ interface ContactModalProps {
 
 export default function ContactModal({ open, onClose }: ContactModalProps) {
 
-   const dispatch = useAppDispatch();
+  const dispatch = useAppDispatch();
+  const [isLoading, setIsLoading] = useState(false);
 
   const [contact, setContact] = useState<ContactModels>({
     name: '',
@@ -30,19 +33,33 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
         e.preventDefault();
     
         if (contact.message === '') {
-          alert('Pesan tidak boleh kosong!');
+          toast.error('Pesan tidak boleh kosong!');
           return;
         }
     
+        setIsLoading(true);
+
         try {
 
             e.preventDefault();
-            await dispatch(addContact(contact));
+            await dispatch(addContact(contact)).unwrap();
+
+            toast.success('Pesan berhasil dikirim!');
+            onClose(); // Tutup modal
+            
             setContact({ name: '', email: '', phone: 0,  message: '' });
         
-        } catch (err) {
-          console.error('Gagal menambahkan komentar:', err);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (err:any) {
+
+            // tampilkan error dari backend jika ada
+            const errorMessage = err || 'Gagal mengirim pesan. Silakan coba lagi.';
+            toast.error(errorMessage);
+
+        } finally {
+          setIsLoading(false);
         }
+        
       };
 
       const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -133,10 +150,12 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
           />
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
+            disabled={isLoading}
+            className={`w-full bg-blue-600 text-white py-2 rounded ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}`}
           >
-            Kirim
+            {isLoading ? 'Mengirim...' : 'Kirim'}
           </button>
+
         </form>
       </div>
     </div>

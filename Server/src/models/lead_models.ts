@@ -10,7 +10,8 @@ interface ILead extends Document{
 
 const LeadSchema = new mongoose.Schema({
     name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
+    email: { type: String, required: true },
+    // email: { type: String, required: true, unique: true },
     phone: { type: Number, required: true },
     message: { type: String, required: true },
 
