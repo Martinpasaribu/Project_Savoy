@@ -37,9 +37,9 @@ export default function Footer() {
             href="https://wa.me/6281190000777"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white text-sm font-semibold py-2 px-4 rounded-md transition"
+            className="flex-center gap-5 w-full max-w-[13rem] bg-green-500 hover:bg-green-600 text-white text-sm font-semibold py-2 px-2 rounded-md transition"
           >
-            Hubungi via WhatsApp
+            Contact via WhatsApp <span><FaWhatsapp /></span>
           </a>
         </div>
       </div>

@@ -105,6 +105,7 @@ export default function Home() {
               height={132}
             />
           </div>
+          
           <div className="absolute bottom-0 right-0 rotate-90">
             <Image
               src="/assets/Ornamen/ornamen_corner.png"
@@ -132,7 +133,7 @@ export default function Home() {
         <HeroParallax/>
       </div>
 
-      <div className="flex-center p-[6rem] relative bg-pattern bg-no-repeat bg-cover bg-top bg-[#f8f8f8]">
+      <div className="flex-center p-[.2rem] md:p-[6rem] relative bg-pattern bg-no-repeat bg-cover bg-top bg-[#f8f8f8]">
 
         <ContactComponent/>
 

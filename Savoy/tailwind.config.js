@@ -116,10 +116,9 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         lora: ['Lora', 'serif'],
+        great: ["Great Vibes", "cursive"],
         luxurious: ['"Luxurious Script"', 'cursive'],
       },
-
-
           
       boxShadow: {
         'main-glow': '0 1px 18px #A9C6EBFF ', 
@@ -130,6 +129,7 @@ module.exports = {
         
         'home1': "url(/assets/Background/home/Page1.jpeg)",
         'about': "url(/assets/Background/about/about.jpg)",
+        'about2': "url(/assets/Background/about/1.jpg)",
         'home2': "url(/assets/Background/home/Page2.jpeg)",
         'pattern': "url(/assets/Ornamen/Savoy-Pattern.png)",
         'living_room': "url(/assets/Image/home/living_room.jpeg)",
