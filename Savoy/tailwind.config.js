@@ -129,6 +129,7 @@ module.exports = {
       backgroundImage: {
         
         'home1': "url(/assets/Background/home/Page1.jpeg)",
+        'about': "url(/assets/Background/about/about.jpg)",
         'home2': "url(/assets/Background/home/Page2.jpeg)",
         'pattern': "url(/assets/Ornamen/Savoy-Pattern.png)",
         'living_room': "url(/assets/Image/home/living_room.jpeg)",

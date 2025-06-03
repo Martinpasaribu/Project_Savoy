@@ -12,6 +12,7 @@ import { useEffect } from "react"; // sudah implicit, tapi pastikan ada
 
 
 export default function Navbar() {
+  
   const dispatch = useDispatch();
   const mode = useSelector((state: RootState) => state.theme.mode);
   const [isOpen, setIsOpen] = useState(false);
@@ -70,12 +71,14 @@ export default function Navbar() {
             </Link>
             <button
               onClick={() => dispatch(toggleTheme())}
-              className="bg-[#b7965d] text-white dark:bg-gray-700 dark:text-white px-2 py-1 mx-2 rounded"
+              className="bg-[#b7965d] hidden text-white dark:bg-gray-700 dark:text-white px-2 py-1 mx-2 rounded"
             >
               {mode === "dark" ? "🌞 Light" : "🌙 Dark"}
             </button>
           </div>
+
         </div>
+
       </nav>
 
       {/* Mobile Navbar */}
@@ -130,7 +133,7 @@ export default function Navbar() {
                 dispatch(toggleTheme());
                 toggleMenu();
               }}
-              className="bg-white text-black dark:bg-gray-700 dark:text-white px-2 py-1 rounded"
+              className="bg-white hidden text-black dark:bg-gray-700 dark:text-white px-2 py-1 rounded"
             >
               {mode === "dark" ? "🌞 Light" : "🌙 Dark"}
             </button>

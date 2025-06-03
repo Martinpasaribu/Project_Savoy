@@ -36,6 +36,10 @@ export default function Home() {
 
         <div className="w-full h-screen bg-living_room bg-no-repeat bg-cover bg-center">
 
+            <div className='absolute  z-20 w-full h-full backdrop-blur-xs bg-gradient-to-r from-gray-500 '>
+
+            </div>
+
         </div>
 
 

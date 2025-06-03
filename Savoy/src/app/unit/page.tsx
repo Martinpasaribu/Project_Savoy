@@ -7,7 +7,7 @@ const UnitPage = () => {
     <div>
 
 
-      <div className="max-w-8xl mx-auto hp4:px-4 py-16 space-y-24">
+      <div className="max-w-8xl mx-auto space-y-24">
         <AnimatedSection/>
       </div>
   

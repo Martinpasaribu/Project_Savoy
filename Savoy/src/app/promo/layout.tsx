@@ -1,5 +1,5 @@
 // app/about/layout.tsx
-export default function PromoLayout({
+export default function AboutLayout({
   children,
 }: {
   children: React.ReactNode;

@@ -1,6 +1,6 @@
 
 import { v4 as uuidv4 } from 'uuid'; 
-import LeadModel from '../models/lead_models';
+import LeadModel from '../../models/lead_models';
 
 export class LeadControllers {
 

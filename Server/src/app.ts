@@ -1,6 +1,7 @@
 import express from 'express';
-import LeadRoutes from './routes/lead_routes';
+import LeadRoutes from './routes/lead/lead_routes';
 import cors from 'cors';
+import PromoRoutes from './routes/promo/promo_routes';
 
 const app = express();
 
@@ -28,5 +29,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1/lead', LeadRoutes);
+app.use('/api/v1/promo', PromoRoutes);
 
 export default app;

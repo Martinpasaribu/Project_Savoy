@@ -7,6 +7,7 @@ export default function PromoPage() {
   const isScrolling = useRef(false) // untuk debounce
 
   const cards = [
+
     {
       price: '$69',
       title: 'Origami',
@@ -22,6 +23,7 @@ export default function PromoPage() {
       title: 'Framer',
       desc: 'Design is not making beauty, beauty emerges from selection.'
     }
+    
   ]
 
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
