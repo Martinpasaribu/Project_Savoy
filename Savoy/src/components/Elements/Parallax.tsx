@@ -10,7 +10,7 @@ export default function HeroParallax() {
         <Parallax speed={-30}>
           <Image
             src="/assets/Image/parallax/leaf.jpg"
-            className="absolute -top-[15rem] w-full opacity-100"
+            className="absolute top-0 md:-top-[15rem] w-full opacity-100"
             alt="leaf"
             width={1500}
             height={1500}

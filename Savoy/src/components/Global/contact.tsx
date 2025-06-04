@@ -8,7 +8,6 @@ import { addContact } from "@/lib/slice/contactSlice";
 import toast from 'react-hot-toast';
 
 
-
 interface ContactModalProps {
   open: boolean;
   onClose: () => void;
@@ -73,19 +72,19 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
             ...prev,
             [name]: value,
         }));
-    };
+      };
 
 
-  useEffect(() => {
-    if (!open) return;
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, [open, onClose]);
+    useEffect(() => {
+      if (!open) return;
+      const handleEsc = (e: KeyboardEvent) => {
+        if (e.key === "Escape") onClose();
+      };
+      window.addEventListener("keydown", handleEsc);
+      return () => window.removeEventListener("keydown", handleEsc);
+    }, [open, onClose]);
 
-  if (!open) return null;
+    if (!open) return null;
 
   return (
     <div
@@ -104,6 +103,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
           <X />
         </button>
         <h2 className="text-xl font-bold mb-4 text-black dark:text-white">Contact Us</h2>
+        
         <form
           onSubmit={handleSubmit}
         >
@@ -113,10 +113,11 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
             id="name" 
             value={contact.name}
             onChange={handleChange}
-            placeholder="Nama"
+            placeholder="Name"
             required
-            className="w-full mb-3 px-4 py-2 border rounded dark:bg-gray-700 dark:text-white"
+            className="w-full mb-3 px-4 py-2 border rounded dark:bg-gray-700 dark:text-white focus:border-[#a38b61]"
           />
+
           <input
             type="email" 
             name="email" 
@@ -125,17 +126,18 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
             onChange={handleChange}
             placeholder="Email"
             required
-            className="w-full mb-3 px-4 py-2 border rounded dark:bg-gray-700 dark:text-white"
+            className="w-full mb-3 px-4 py-2 border rounded dark:bg-gray-700 dark:text-white focus:border-[#a38b61]"
           />
+
           <input
             type="tel" 
             pattern="\d{10,15}" 
             name="phone" id="phone"
             value={contact.phone}
             onChange={handleChange}
-            placeholder="Email"
+            placeholder="Phone"
             required
-            className="w-full mb-3 px-4 py-2 border rounded dark:bg-gray-700 dark:text-white"
+            className="w-full mb-3 px-4 py-2 border rounded text-slate-400 dark:bg-gray-400 dark:text-white focus:border-[#a38b61]"
           />
           <textarea
             id="message" 
@@ -145,13 +147,13 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
             required
             value={contact.message}
             onChange={handleChange}
-            className="w-full mb-3 px-4 py-2 border rounded dark:bg-gray-700 dark:text-white"
+            className="w-full mb-3 px-4 py-2 border rounded dark:bg-gray-700 dark:text-white focus:border-[#a38b61]"
             
           />
           <button
             type="submit"
             disabled={isLoading}
-            className={`w-full bg-blue-600 text-white py-2 rounded ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-700'}`}
+            className={`w-full bg-[#a38b61] text-white py-2 rounded ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#aa8b55]'}`}
           >
             {isLoading ? 'Mengirim...' : 'Kirim'}
           </button>

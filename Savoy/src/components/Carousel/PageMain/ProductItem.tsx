@@ -4,30 +4,26 @@ import Image from "next/image";
 
 const slides = [
   {
-    img: "/assets/Image/Carousel/Item_Product/Dining.jpeg",
+    img: "/assets/Image/Carousel/Item_Product/dining_room.jpg",
     text: `Dining Room`,
   },
   {
-    img: "/assets/Image/Carousel/Item_Product/Bedroom.jpeg",
+    img: "/assets/Image/Carousel/Item_Product/bedroom.jpg",
     text: `Master Bedroom`,
   },
+ 
   {
-    img: "/assets/Image/Carousel/Item_Product/Kitchen.jpeg",
+    img: "/assets/Image/Carousel/Item_Product/Kitchen.jpg",
     text: `Kitchen`,
   },
+  
   {
-    img: "/assets/Image/Carousel/Item_Product/Kitchen.jpeg",
-    text: `Kitchen`,
+    img: "/assets/Image/Carousel/Item_Product/sitting_room.jpg",
+    text: `Sitting room`,
   },
-
   {
-    img: "/assets/Image/Carousel/Item_Product/Kitchen.jpeg",
-    text: `Kitchen`,
-  },
-
-  {
-    img: "/assets/Image/Carousel/Item_Product/Kitchen.jpeg",
-    text: `Kitchen`,
+    img: "/assets/Image/Carousel/Item_Product/extra_space2.jpg",
+    text: `Extra Space`,
   },
 
 ];
@@ -85,16 +81,16 @@ export default function CarouselItemProduct() {
               {slides.map((slide, index) => (
                 <div
                   key={index}
-                  className=" w-[8rem] rounded-3xl p-2 sm:p-4 text-center shrink-0 bg-white/10 shadow-sm dark:bg-[rgb(238,238,238)] backdrop-blur "
+                  className=" w-[8rem] rounded-3xl p-2 sm:p-4 text-center shrink-0 bg-white/10 shadow-sm dark:bg-[rgb(238,238,238)] backdrop-blur"
                   style={{ minWidth: `${96 / visibleCount}%` }}
                 >
-                  <div className="flex justify-center items-center w-full h-[15rem]">
+                  <div className="flex justify-center items-center w-full h-[18rem]">
                     <Image
                       src={slide.img}
                       alt={`slide-${index}`}
-                      width={350}
-                      height={350}
-                      className="object-contain transition-transform duration-300 transform hover:scale-110"
+                      width={300}
+                      height={200}
+                      className=" transition-transform duration-300 transform hover:scale-110 h-[16rem]"
                     />
                   </div>
                   <p className="mt-4 text-sm text-white">{slide.text}</p>

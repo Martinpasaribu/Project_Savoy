@@ -118,6 +118,7 @@ module.exports = {
         lora: ['Lora', 'serif'],
         great: ["Great Vibes", "cursive"],
         luxurious: ['"Luxurious Script"', 'cursive'],
+        balham: ['Balham', 'sans-serif'],
       },
           
       boxShadow: {
@@ -133,6 +134,7 @@ module.exports = {
         'home2': "url(/assets/Background/home/Page2.jpeg)",
         'pattern': "url(/assets/Ornamen/Savoy-Pattern.png)",
         'living_room': "url(/assets/Image/home/living_room.jpeg)",
+        'discover': "url(/assets/Image/home/discover.jpg)",
       },
 
       keyframes: {

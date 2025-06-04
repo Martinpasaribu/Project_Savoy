@@ -8,3 +8,11 @@
 .flex-center {
     @apply  flex justify-center items-center
 }
+
+
+@font-face {
+  font-family: 'Balham';
+  src: url('/Fonts/Balham-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

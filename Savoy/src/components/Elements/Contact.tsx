@@ -1,6 +1,91 @@
-import React from 'react'
+"use client"
+
+import { useAppDispatch } from '@/lib/hooks/hooks';
+import { addContact } from '@/lib/slice/contactSlice';
+import { ContactModels } from '@/models/contact_models';
+import React, { useEffect, useState } from 'react'
+import toast from 'react-hot-toast';
+
 
 const ContactComponent = () => {
+
+const dispatch = useAppDispatch();
+const [isLoading, setIsLoading] = useState(false);
+
+const [contact, setContact] = useState<ContactModels>({
+    name: '',
+    email: '',
+    phone: 0,
+    message: '',
+});
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const handleSubmit = async (e:any) => {
+
+    e.preventDefault();
+
+    if (contact.message === '') {
+        toast.error('Pesan tidak boleh kosong!');
+        return;
+    }
+
+    setIsLoading(true);
+
+    try {
+
+        e.preventDefault();
+        await dispatch(addContact(contact)).unwrap();
+
+        toast.success('Pesan berhasil dikirim!');
+        
+        setContact({ name: '', email: '', phone: 0,  message: '' });
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    } catch (err:any) {
+
+        // tampilkan error dari backend jika ada
+        const errorMessage = err || 'Gagal mengirim pesan. Silakan coba lagi.';
+        toast.error(errorMessage);
+
+    } finally {
+        setIsLoading(false);
+    }
+
+};
+
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+
+    const { name, value } = e.target;
+    // Validasi angka (hanya izinkan digit)
+    if (name === 'phone' && !/^\d*$/.test(value)) {
+        return; // Abaikan input jika tidak valid
+    }
+
+    setContact((prev) => ({
+        ...prev,
+        [name]: value,
+    }));
+
+};
+
+useEffect(() => {});
+    
+// useEffect(() => {
+
+//     if (!open) return;
+
+//     const handleEsc = (e: KeyboardEvent) => {
+//         if (e.key === "Escape") onClose();
+//     };
+
+//     window.addEventListener("keydown", handleEsc);
+
+//         return () => window.removeEventListener("keydown", handleEsc);
+
+// }, [open, onClose]);
+
+
+
   return (
     <div className=''>
         
@@ -70,17 +155,62 @@ const ContactComponent = () => {
                 </div>
                 </div>
 
-                <form className="space-y-4">
-                    <input type='text' placeholder='Name'
-                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-blue-500" />
-                    <input type='email' placeholder='Email'
-                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-blue-500" />
-                    <input type='text' placeholder='Phone'
-                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-blue-500" />
-                    <textarea placeholder='Message' rows={6}
-                        className="w-full text-slate-900 rounded-md px-4 border border-gray-300 text-sm pt-2.5 outline-0 focus:border-blue-500"></textarea>
-                    <button type='button'
-                        className="text-white bg-[#a38b61] hover:bg-[#a38b61] rounded-md text-[15px] font-medium px-4 py-2 w-full cursor-pointer !mt-6">Send</button>
+                <form onSubmit={handleSubmit} className="space-y-4">
+                    
+                    <input 
+
+                        type='text' 
+                        name="name" 
+                        id="name" 
+                        value={contact.name}
+                        onChange={handleChange}
+                        placeholder='Name'
+                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-[#a38b61]" />
+                        
+                    
+                    <input 
+                        type='email' 
+                        name="email" 
+                        id="email"
+                        value={contact.email}
+                        onChange={handleChange} 
+                        placeholder='Email'
+                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-[#a38b61]" />
+                    
+                    <input 
+                        type='tels' 
+                        name="phone" id="phone"
+                        value={contact.phone}
+                        onChange={handleChange}
+                        placeholder="Phone"
+                        required
+                        className="w-full text-slate-400 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-[#a38b61]" />
+                    
+                    <textarea 
+                        id="message" 
+                        name="message" 
+                        placeholder='Message' 
+                        rows={6}
+                        value={contact.message}
+                        onChange={handleChange}
+                        required
+
+                        className="w-full text-slate-900 rounded-md px-4 border border-gray-300 text-sm pt-2.5 outline-0 focus:border-[#a38b61]">   
+                    </textarea>
+                    
+                    {/* <button type='button'
+                        className="text-white bg-[#a38b61] hover:bg-[#a38b61] rounded-md text-[15px] font-medium px-4 py-2 w-full cursor-pointer !mt-6">
+                            Send
+                    </button> */}
+                    
+                    <button 
+                        type="submit"
+                        disabled={isLoading}
+                        className={`w-full bg-[#a38b61] text-white py-2 rounded ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#aa8b55]'}`}
+                    >
+                        {isLoading ? 'Mengirim...' : 'Send'}
+                    </button>
+
                 </form>
             </div>
         </div>
