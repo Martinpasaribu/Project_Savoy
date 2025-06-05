@@ -54,7 +54,7 @@ export default function PromoPopup() {
           <p className="text-[#a07c40] text-[12px] mb-4 text-sm">
             Free 3 Unit AC,<br />
             {/* Gold 1 Kg<br /> */}
-            Goat 2 tead
+            {/* Goat 2 tead */}
           </p>
           <button className="bg-[#a07c40] text-[12px] text-white px-4 py-2 rounded hover:bg-blue-600 transition">
             Claim Now
