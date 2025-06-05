@@ -13,7 +13,7 @@ const slides = [
   },
  
   {
-    img: "/assets/Image/Carousel/Item_Product/Kitchen.jpg",
+    img: "/assets/Image/Carousel/Item_Product/kitchen.jpg",
     text: `Kitchen`,
   },
   

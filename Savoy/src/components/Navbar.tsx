@@ -28,7 +28,9 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
+
   }, []);
 
 
@@ -54,7 +56,7 @@ export default function Navbar() {
             />
           </Link>
 
-          <div className="flex gap-4 items-center dark:text-white text-slate-200 text-[11px] font-semibold ">
+          <div className="flex gap-4 items-center dark:text-white text-white text-[11px] font-semibold ">
             <Link href="/">HOME</Link>
             <Link href="/about">ABOUT US</Link>
             <Link href="/unit">THE UNIT</Link>

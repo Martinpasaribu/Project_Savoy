@@ -7,7 +7,9 @@ export default function HeroParallax() {
   return (
     <ParallaxProvider>
       <div className="relative h-screen overflow-hidden bg-white">
+
         <Parallax speed={-30}>
+          
           <Image
             src="/assets/Image/parallax/leaf.jpg"
             className="absolute top-0 md:-top-[15rem] w-full opacity-100"
@@ -15,6 +17,7 @@ export default function HeroParallax() {
             width={1500}
             height={1500}
           />
+          
         </Parallax>
 
         <div className="relative z-10 flex flex-col gap-6 justify-center items-center h-full font-balham">
@@ -29,6 +32,7 @@ export default function HeroParallax() {
                
             </p>
         </div>
+
       </div>
     </ParallaxProvider>
   );
