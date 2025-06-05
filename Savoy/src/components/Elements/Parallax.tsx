@@ -17,14 +17,16 @@ export default function HeroParallax() {
           />
         </Parallax>
 
-        <div className="relative z-10 flex flex-col gap-6 justify-center items-center h-full">
-            
-            <h1 className='text-[15px] text-[#a48f6c]'>DELIVERING</h1>
+        <div className="relative z-10 flex flex-col gap-6 justify-center items-center h-full font-balham">
 
-            <h1 className="text-2xl font-bold text-[#a48f6c]">A SUSTAINABLE LIVING</h1>
+            {/* <h1 className='text-[15px] md:text-[19px] text-[#a48f6c]'>A Life of Ease</h1> */}
 
-            <p className='text-[12px] w-full max-w-[30rem] text-center text-gray-300'>The luscious green landscape of Savoy will take your stress away as you enjoy
-                having walk or stroll through the parks and lakes with our loved ones.
+            <h1 className="text-2xl md:text-4xl font-bold text-[#a48f6c]">A Life of Ease, Shaped by Purpose</h1>
+
+            <p className='text-[12px] md:text-[22px] w-full max-w-[45rem] text-center text-gray-300'>
+
+                Live in a space where every element is intentionally designed to simplify your life, blending modern comfort with meaningful functionality for the way you live today
+               
             </p>
         </div>
       </div>

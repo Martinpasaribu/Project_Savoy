@@ -118,8 +118,8 @@ export default function Navbar() {
           <div className="flex flex-col gap-4 p-4 font-semibold">
             <Link href="/" onClick={toggleMenu}>Home</Link>
             <Link href="/about" onClick={toggleMenu}>About</Link>
-            <Link href="/unit" onClick={toggleMenu}>Blog</Link>
-            <Link href="/partner" onClick={toggleMenu}>Partner with us</Link>
+            <Link href="/unit" onClick={toggleMenu}>The Unit</Link>
+            <Link href="/promo" onClick={toggleMenu}>Promo</Link>
             <button
               onClick={() => {
                 setIsContactOpen(true); // ✅ buka modal

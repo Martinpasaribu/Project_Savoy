@@ -25,6 +25,10 @@ const slides = [
     img: "/assets/Image/Carousel/Item_Product/extra_space2.jpg",
     text: `Extra Space`,
   },
+  {
+    img: "/assets/Image/Carousel/Item_Product/swiming_pool.jpg",
+    text: `Swimming pool`,
+  },
 
 ];
 
@@ -60,10 +64,10 @@ export default function CarouselItemProduct() {
         <div className="flex relative justify-center items-center ">
 
           {/* Prev button */}
-          <div className=" absolute left-0 bottom-[2rem] w-full max-w-[5rem] flex justify-center">
+          <div className=" absolute left-0 bottom-[1rem] w-full max-w-[5rem] flex justify-center">
             <button
               onClick={prev}
-              className="bg-[#e5d6bd] text-white shadow-md w-10 h-10 flex items-center justify-center rounded-full z-10 disabled:opacity-30"
+              className="w-full max-w-[2.5rem] bg-[#cbc5bb] text-white shadow-md h-10 flex items-center justify-center rounded-full z-10 disabled:opacity-30"
               disabled={current === 0}
             >
               &lt;
@@ -100,7 +104,7 @@ export default function CarouselItemProduct() {
           </div>
 
           {/* Next button */}
-          <div className="absolute right-0 bottom-[2rem] w-full max-w-[5rem] flex justify-center">
+          <div className="absolute right-0 bottom-[1rem] w-full max-w-[5rem] flex justify-center">
             <button
               onClick={next}
               className="w-full max-w-[2.5rem] bg-[#cbc5bb] text-white shadow-md h-10 flex items-center justify-center rounded-full z-10 disabled:opacity-30"

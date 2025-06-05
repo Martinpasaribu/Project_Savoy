@@ -19,7 +19,7 @@ export default function Footer() {
         {/* Sitemaps */}
         <div>
           <h3 className="font-semibold mb-4">Sitemaps</h3>
-          <ul className="space-y-2 text-gray-400 text-light">
+          <ul className=" text-gray-400 text-light flex flex-row md:flex-col w-full justify-around md:justify-start md:items-start items-center">
             <li><a href="/about" className="hover:underline">About Us</a></li>
             <li><a href="/unit" className="hover:underline">The Unit</a></li>
             <li><a href="/promo" className="hover:underline">Promo</a></li>

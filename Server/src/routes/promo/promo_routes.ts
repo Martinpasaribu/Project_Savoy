@@ -13,7 +13,7 @@ PromoRoutes.post("/create/promo", upload, async (req: Request, res: Response, ne
          next(); // Jika tidak ada file, lanjutkan ke RoomController
     }
 
-        // Ambil file yang diunggah
+    // Ambil file yang diunggah
     const imageFile = (req.files as { [key: string]: Express.Multer.File[] })['image'] || [];
     const image_bg = (req.files as { [key: string]: Express.Multer.File[] })['image_bg'] || [];
     const image2_bg = (req.files as { [key: string]: Express.Multer.File[] })['image2_bg'] || [];

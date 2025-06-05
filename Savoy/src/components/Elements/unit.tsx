@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Image from "next/image";
 import clsx from "clsx";
 import { BedDouble, Bath, WavesLadder, Car, Bed, ArrowRight, ArrowLeft } from "lucide-react";
@@ -67,6 +67,14 @@ export default function CustomCarousel() {
   const slideWidth = 350; // Width per slide (px)
   const maxIndex = wines.length - 1;
 
+  const targetRef = useRef<HTMLDivElement>(null);
+
+  const scrollToSection = () => {
+    targetRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+  
+
+
   const next = () => {
     if (currentIndex < maxIndex) {
       setCurrentIndex((prev) => prev + 1);
@@ -81,7 +89,7 @@ export default function CustomCarousel() {
 
   return (
 
-    <div className="space-y-5">
+    <div className="space-y-5 font-balham">
 
         <div className="flex flex-col justify-center md1:flex-row gap-2 bg-[#a48f6c] text-white min-h-screen pt-16 md:pt-[5rem] px-3 hp2:px-4 md2:px-10 ">
 
@@ -93,14 +101,14 @@ export default function CustomCarousel() {
                 Now<br />
                 <p className="text-2xl md2:text-4xl ">10 Exclusive Units Available</p>
               </h1>
-              <p className="text-[15px] md2:text-md text-white/70 mb-6">
+              <p className="text-[13px] hp1:text-[15px] md2:text-md text-white/70 mb-6">
                 Savoy Residences offers more than just a home— it delivers a statement of modern luxury. Each 3-storey townhouse is equipped with a private swimming pool, expansive open-plan living and dining areas, and premium finishes that highlight quality in every detail.
 
               </p>
-              <p className="text-[15px] md2:text-md text-white/70 mb-6">
+              <p className="text-[13px] hp1:text-[15px] md2:text-md text-white/70 mb-6">
                 Designed for families who appreciate both style and practicality, every corner of the home is built to support your dynamic lifestyle. From daily routines to weekend gatherings, experience a space that looks refined, feels spacious, and functions beautifully.
               </p>
-              <button className="text-[11px] md2:text-[15px] border border-white px-6 py-2 rounded-full hover:bg-white hover:text-[#a48f6c] transition">
+              <button onClick={scrollToSection} className="text-[11px] md2:text-[15px] border border-white px-6 py-2 rounded-full hover:bg-white hover:text-[#a48f6c] transition">
                 View more
               </button>
 
@@ -114,7 +122,7 @@ export default function CustomCarousel() {
                   <h2 className="font-semibold mb-5 text-[18px] hp2:text-left">Facilities</h2>
                   <div className="flex flex-wrap justify-center gap-4 text-sm  opacity-0 translate-y-[-20px] animate-fadeSlideDown">
                     {wines[currentIndex].list.map((item, idx) => (
-                      <p key={idx} className="p-1 px-2 hp1:p-2 text-[10px] md:text-[13px] border-gray-200  border-[1px] rounded-3xl">{item}</p>
+                      <p key={idx} className="p-1 px-2 hp1:px-4 text-[10px] md:text-[13px] bg-white border-gray-200 text-[#a48f6c] border-[1px] rounded-3xl">{item}</p>
                     ))}
                   </div>
                 </div>
@@ -178,7 +186,7 @@ export default function CustomCarousel() {
           </div>
         </div>
 
-        <div className="flex flex-col  gap-2 md2:gap-10  min-h-screen px-4 md2:px-[3rem] py-16 text-[#a17d41]">
+        <div ref={targetRef} className="flex flex-col  gap-2 md2:gap-10  min-h-screen px-4 md2:px-[3rem] py-16 text-[#a17d41]">
 
             <div className=" mb-8 ">
               

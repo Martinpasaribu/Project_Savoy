@@ -32,25 +32,26 @@ export default function Home() {
 
       </div>
 
-      <div className="relative flex flex-col-reverse md:flex-row flex-center font-balham  w-full">
+      <div className="relative flex flex-col-reverse md:flex-row justify-around items-center font-balham w-full h-screen">
 
-        <div className="flex flex-col justify-end items-end px-2 md:px-4 py-4 md:py-5 w-[45rem] h-full gap-5">
+        <div className="absolute w-[5rem] md:w-[6.8rem] bottom-0 -right-[3px] rotate-90">
+          <Image
+            src="/assets/Ornamen/ornamen_corner.png"
+            alt="savoy image"
+            width={122}
+            height={132}
+          />
+        </div>
 
-            <h1 className="text-[18px] leading-tight text-left text-[#9f8355] max-w-[20rem]">
+        <div className="flex flex-col justify-center items-center md1:items-start py-4 px-3 hp1:px-8  md:px-5 md:py-5 w-full md:w-[35rem] h-full gap-5">
+
+
+            <h1 className="text-[16px] md:text-[18px] leading-tight text-center hp1:text-left text-[#9f8355] max-w-[20rem]">
               Discover a world of comfort
               and elegance
             </h1>
 
-            <div className="absolute bottom-0 right-0 rotate-90">
-              <Image
-                src="/assets/Ornamen/ornamen_corner.png"
-                alt="savoy image"
-                width={112}
-                height={132}
-              />
-            </div>
-
-            <p className="text-[13px] w-full max-w-[20rem] text-justify text-slate-700 dark:text-gray-300 font-thin">
+            <p className="text-[10px] md:text-[13px] w-full md:max-w-[30rem] text-justify text-slate-700 dark:text-gray-300 font-thin">
               Indulge in the epitome of luxury living with classic modern townhouses at Savoy Residences in Bintaro, 
               South Jakarta. Each residence is thoughtfully designed to provide unparalleled comfort and elegance, 
               with high-end finishes that create a serene atmosphere. Whether you`re unwinding in your living room or hosting 
@@ -60,7 +61,7 @@ export default function Home() {
 
         </div>
 
-        <div className="w-full h-screen flex-center">
+        <div className="w-full hidden hp1:flex justify-center items-center hp1:max-w-[25rem] md:max-w-[30rem]  p-5">
           <Image
             src="/assets/Image/home/discover.jpg"
             alt="MyApp Logo"
@@ -97,7 +98,7 @@ export default function Home() {
 
       <div className="flex flex-col relative pb-[5rem] font-balham ">
 
-          <div className="absolute top-0 w-[5rem] md:w-[8rem] -right-0">
+          <div className="absolute top-0 w-[5rem] md:w-[7rem] right-0">
             <Image
               src="/assets/Ornamen/ornamen_corner.png"
               alt="MyApp Logo"
@@ -106,7 +107,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="absolute top-0 w-[5rem] md:w-[8rem] -left-0 -rotate-90">
+          <div className="absolute top-0 w-[5rem] md:w-[7rem] -left-1 -rotate-90">
             <Image
               src="/assets/Ornamen/ornamen_corner.png"
               alt="MyApp Logo"
