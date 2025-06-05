@@ -53,7 +53,7 @@ export default function PromoPopup() {
           <h2 className="text-3xl font-bold text-gray-900 my-2">30% OFF</h2>
           <p className="text-[#a07c40] text-[12px] mb-4 text-sm">
             Free 3 Unit AC,<br />
-            Gold 1 Kg<br />
+            {/* Gold 1 Kg<br /> */}
             Goat 2 tead
           </p>
           <button className="bg-[#a07c40] text-[12px] text-white px-4 py-2 rounded hover:bg-blue-600 transition">
