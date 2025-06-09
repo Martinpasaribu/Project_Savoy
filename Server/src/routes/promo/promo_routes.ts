@@ -57,4 +57,6 @@ PromoRoutes.post("/create/promo", upload, async (req: Request, res: Response, ne
 
 PromoRoutes.get("/get/promo", PromoControllers.GetPromo);
 
+PromoRoutes.delete("/del/promo/:id", PromoControllers.DeletedPromo);
+
 export default PromoRoutes;

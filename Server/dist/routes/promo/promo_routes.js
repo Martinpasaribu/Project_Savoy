@@ -60,4 +60,5 @@ PromoRoutes.post("/create/promo", ImageKit_1.upload, (req, res, next) => __await
     }
 }), promo_controllers_1.PromoControllers.AddPromo);
 PromoRoutes.get("/get/promo", promo_controllers_1.PromoControllers.GetPromo);
+PromoRoutes.delete("/del/promo/:id", promo_controllers_1.PromoControllers.DeletedPromo);
 exports.default = PromoRoutes;

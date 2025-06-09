@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Luxurious+Script&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Great+Vibes&family=Luxurious+Script&display=swap'); */
 
 @tailwind base;
 @tailwind components;
@@ -10,9 +10,9 @@
 }
 
 
-@font-face {
+/* @font-face {
   font-family: 'Balham';
   src: url('/Fonts/Balham-Regular.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
-}
+} */

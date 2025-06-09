@@ -117,7 +117,7 @@ module.exports = {
         poppins: ['Poppins', 'sans-serif'],
         lora: ['Lora', 'serif'],
         great: ["Great Vibes", "cursive"],
-        luxurious: ['"Luxurious Script"', 'cursive'],
+        luxurious: ['Luxurious Script', 'cursive'],
         balham: ['Balham', 'sans-serif'],
       },
           

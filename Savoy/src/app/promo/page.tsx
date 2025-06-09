@@ -1,30 +1,42 @@
 'use client'
 
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
+
+type CardType = {
+  price: string | null
+  title: string
+  desc: string | null
+}
+
 
 export default function PromoPage() {
   const [activeIndex, setActiveIndex] = useState(0)
   const isScrolling = useRef(false) // untuk debounce
+  const [cards, setCards] = useState<CardType[]>([])
 
-  const cards = [
 
-    {
-      price: '$69',
-      title: 'Origami',
-      desc: 'Space and light and order. Those are the things that men.'
-    },
-    {
-      price: '$89',
-      title: 'Framer',
-      desc: 'Design is not making beauty, beauty emerges from selection.'
-    },
-    {
-      price: '$89',
-      title: 'Framer',
-      desc: 'Design is not making beauty, beauty emerges from selection.'
+  useEffect(() => {
+
+    const fetchData = async () => {
+      try {
+        const res = await fetch('/api/promo') // ⬅️ panggil route internal
+        const data = await res.json()
+        console.log(data);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const mapped = data.map((item: any) => ({
+          price: item.price || '$0',
+          title: item.title || 'No Title',
+          desc: item.description || 'No Description'
+        }))
+
+        setCards(mapped)
+      } catch (error) {
+        console.error('Fetch failed:', error)
+      }
     }
-    
-  ]
+
+    fetchData()
+  }, [])
 
   const handleScroll = (e: React.WheelEvent<HTMLDivElement>) => {
     if (isScrolling.current) return

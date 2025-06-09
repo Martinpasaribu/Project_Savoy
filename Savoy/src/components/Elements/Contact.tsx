@@ -3,7 +3,7 @@
 import { useAppDispatch } from '@/lib/hooks/hooks';
 import { addContact } from '@/lib/slice/contactSlice';
 import { ContactModels } from '@/models/contact_models';
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import toast from 'react-hot-toast';
 
 
@@ -33,7 +33,6 @@ const handleSubmit = async (e:any) => {
 
     try {
 
-        e.preventDefault();
         await dispatch(addContact(contact)).unwrap();
 
         toast.success('Pesan berhasil dikirim!');
@@ -68,7 +67,6 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
 
 };
 
-useEffect(() => {});
     
 // useEffect(() => {
 
@@ -87,6 +85,7 @@ useEffect(() => {});
 
 
   return (
+
     <div className=''>
         
         <div className="p-4">

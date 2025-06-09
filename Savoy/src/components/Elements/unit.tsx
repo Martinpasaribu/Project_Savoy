@@ -62,6 +62,7 @@ const menuItems = [
 ];
 
 export default function CustomCarousel() {
+  
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const slideWidth = 350; // Width per slide (px)

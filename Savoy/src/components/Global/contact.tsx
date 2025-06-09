@@ -155,7 +155,7 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
             disabled={isLoading}
             className={`w-full bg-[#a38b61] text-white py-2 rounded ${isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-[#aa8b55]'}`}
           >
-            {isLoading ? 'Mengirim...' : 'Kirim'}
+            {isLoading ? 'Mengirim...' : 'Send'}
           </button>
 
         </form>

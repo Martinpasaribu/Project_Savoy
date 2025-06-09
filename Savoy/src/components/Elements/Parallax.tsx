@@ -4,7 +4,9 @@ import { ParallaxProvider, Parallax } from 'react-scroll-parallax';
 import Image from 'next/image';
 
 export default function HeroParallax() {
+
   return (
+    
     <ParallaxProvider>
       <div className="relative h-screen overflow-hidden bg-white">
 
