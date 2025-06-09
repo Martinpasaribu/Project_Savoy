@@ -13,14 +13,18 @@ const PromoSchema = new mongoose_1.default.Schema({
     discount2: { type: String, required: false },
     after_discount: { type: String, required: false },
     after_discount2: { type: String, required: false },
-    list: {
-        type: [],
-        required: false
-    },
-    list2: {
-        type: [],
-        required: false
-    },
+    list: [{
+            row: { type: Number },
+            head: { type: String },
+            paragraph: { type: String },
+            value: { type: String }
+        }],
+    list2: [{
+            row: { type: Number },
+            head: { type: String },
+            paragraph: { type: String },
+            value: { type: String }
+        }],
     desc: { type: String, required: false },
     desc2: { type: String, required: false },
     image: [{

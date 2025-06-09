@@ -1,11 +1,27 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
+
+
+type Image  = {
+  row: string,
+  image: string
+}
+type List  = {
+    head: string,
+    paragraph: string,
+    value: number
+}
 
 type CardType = {
   price: string | null
   title: string
+  list: List []| []
+  title2: string
   desc: string | null
+  image: Image[] | []
+  image_bg: string | null
 }
 
 
@@ -26,7 +42,11 @@ export default function PromoPage() {
         const mapped = data.map((item: any) => ({
           price: item.price || '$0',
           title: item.title || 'No Title',
-          desc: item.description || 'No Description'
+          title2: item.title2 || 'No Title2',
+          desc: item.desc || 'No Description',
+          image: item.image || [],
+          list: item.list || [],
+          image_bg: item.image_bg || '',
         }))
 
         setCards(mapped)
@@ -63,9 +83,9 @@ export default function PromoPage() {
   }
 
   return (
-    <section className="relative min-h-screen bg-home2 bg-cover bg-center text-white">
+    <section className="relative min-h-screen bg-home2 bg-cover bg-center text-white font-balham">
       <div className="bg-black bg-opacity-60 min-h-screen flex flex-col items-center justify-center px-6">
-        <h2 className="text-3xl md:text-4xl font-bold mb-2 text-center">Ready to Purchase?</h2>
+        <h2 className="text-2xl md:text-3xl font-bold mb-2 text-center">Ready to Purchase?</h2>
         <p className="text-center text-gray-300 mb-10">Design is thinking made visual.</p>
 
         {/* Carousel Container */}
@@ -81,17 +101,63 @@ export default function PromoPage() {
                 }}
           >
             {cards.map((card, index) => (
+              
               <div
                 key={index}
-                className="w-full max-w-[40rem] h-[420px] flex-shrink-0 bg-white text-black rounded-3xl p-8 shadow-lg text-center"
+                className="w-full max-w-[40rem] h-[420px] flex  flex-col justify-between items-center  bg-gradient-to-br from-white to-gray-50 text-black rounded-3xl p-8 shadow-2xl text-center relative overflow-hidden"
               >
-                <p className="text-4xl font-bold mb-4">{card.price}</p>
-                <h3 className="text-lg font-semibold uppercase">{card.title}</h3>
-                <p className="text-gray-600 mt-2 mb-6">{card.desc}</p>
-                <button className="bg-pink-600 text-white font-semibold px-6 py-2 rounded-full">
-                  Purchase
-                </button>
+                {/* Badge Promo */}
+                <span className="absolute top-4 left-4 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                  PROMO
+                </span>
+
+                <div className='flex flex-col justify-between items-center'>
+                    {/* Harga */}
+                    <p className="text-3xl font-extrabold text-[#a07c40] mb-3">{card.title}</p>
+
+                    {/* Judul */}
+                    <h3 className="text-xl font-semibold uppercase tracking-wide mb-2">
+                      {card.title2}
+                    </h3>
+
+                    {/* Deskripsi */}
+                    <p className="text-gray-600 text-sm px-4 mb-8">{card.desc}</p>
+
+                    <div className=''>
+
+                      <section>
+                        
+
+                        { card.list.map((card, index) => (
+
+                          <div key={index}>
+                            
+                              <h2>{ card.head }</h2>
+                              <h2>{ card.paragraph }</h2>
+                              <h2>{ card.value }</h2>
+                          
+                          </div>
+                          
+                        ))}
+                      </section>
+
+                    </div>
+
+
+                </div>
+
+                    {/* Tombol */}
+                    <button className="bg-[#a07c40] hover:bg-[#a07a38] transition-colors duration-200 text-white font-bold px-6 py-2 rounded-full shadow-md">
+                      Claim Now
+                    </button>
+
+                {/* Background Shape */}
+                <div className="absolute bottom-[-3rem] right-[-3rem] w-[120px] h-[120px] bg-[#907a54] rounded-full  z-0" />
+                <div className="absolute bottom-[-3rem] right-[2rem] w-[120px] h-[120px] bg-[#a07c40] rounded-full opacity-30 z-0" />
+                <div className="absolute bottom-[1rem] right-[-3rem] w-[120px] h-[120px] bg-[#a07c40] rounded-full opacity-30 z-0" />
+              
               </div>
+
             ))}
           </div>
 

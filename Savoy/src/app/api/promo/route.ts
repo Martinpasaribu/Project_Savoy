@@ -1,9 +1,10 @@
 // app/api/promo/route.ts
+import { UrlMain } from '@/utils/http'
 import { NextResponse } from 'next/server'
 
 export async function GET() {
   try {
-    const res = await fetch('http://localhost:5000/api/v1/promo/get/promo')
+    const res = await fetch(`${UrlMain}/promo/get/promo`)
     const data = await res.json()
 
     // Optionally transform data here
