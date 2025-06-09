@@ -21,6 +21,8 @@ class PromoControllers {
     static AddPromo(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
             const PromoReq = req.body;
+            // const body = JSON.parse(req.body.list); // 💥 Tambahkan ini
+            // const PromoReq = body.list;
             try {
                 const newPromo = new promo_models_1.default(PromoReq);
                 const savedPromo = yield newPromo.save();

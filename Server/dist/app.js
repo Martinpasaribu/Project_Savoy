@@ -17,6 +17,7 @@ app.use((0, cors_1.default)({
     credentials: true,
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
+app.use(express_1.default.urlencoded({ extended: true })); // <--- WAJIB untuk nested form field
 app.use(express_1.default.json());
 app.get('/', (req, res) => {
     res.send('Welcome to the Server Savoy!');

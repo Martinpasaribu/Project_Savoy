@@ -21,7 +21,7 @@ app.use(cors({
     allowedHeaders: ["Content-Type", "Authorization"],
 }));
 
-
+app.use(express.urlencoded({ extended: true })); // <--- WAJIB untuk nested form field
 app.use(express.json());
 
 app.get('/', (req, res) => {

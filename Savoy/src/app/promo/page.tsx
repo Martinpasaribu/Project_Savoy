@@ -4,10 +4,11 @@ import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
 
 
-type Image  = {
-  row: string,
+type image  = {
+  row: number,
   image: string
 }
+
 type List  = {
     head: string,
     paragraph: string,
@@ -20,7 +21,7 @@ type CardType = {
   list: List []| []
   title2: string
   desc: string | null
-  image: Image[] | []
+  image: image [] | []
   image_bg: string | null
 }
 
@@ -113,10 +114,10 @@ export default function PromoPage() {
 
                 <div className='flex flex-col justify-between items-center'>
                     {/* Harga */}
-                    <p className="text-3xl font-extrabold text-[#a07c40] mb-3">{card.title}</p>
+                    {/* <p className="text-3xl font-extrabold text-[#a07c40] mb-3">{card.title}</p> */}
 
                     {/* Judul */}
-                    <h3 className="text-xl font-semibold uppercase tracking-wide mb-2">
+                    <h3 className="text-xl font-semibold uppercase tracking-wide mb-2 mt-5">
                       {card.title2}
                     </h3>
 
@@ -128,17 +129,29 @@ export default function PromoPage() {
                       <section>
                         
 
-                        { card.list.map((card, index) => (
+                        { card.list.map((item, index) => (
 
-                          <div key={index}>
+                          <div key={index} className='flex gap-5'>
                             
-                              <h2>{ card.head }</h2>
-                              <h2>{ card.paragraph }</h2>
-                              <h2>{ card.value }</h2>
+                            <div className="w-full max-w-[8rem] md:max-w-[11rem] ">
+                              <Image
+                                src={card.image[index].image}
+                                alt="savoy icon"
+                                width={180}
+                                height={180}
+                                className='rounded-lg'
+                              />
+                            </div>
+                            <div className='flex flex-col gap-2'>
+                                <h2 className='text-md font-sans font-extrabold'>{ item.head }</h2>
+                                <h2 className='font-light'>{ item.paragraph }</h2>
+                                <h2>{ item.value }</h2>
+                            </div>
                           
                           </div>
                           
                         ))}
+
                       </section>
 
                     </div>

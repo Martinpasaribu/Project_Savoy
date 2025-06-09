@@ -12,6 +12,9 @@ export class PromoControllers {
 
             const PromoReq = req.body;
             
+            // const body = JSON.parse(req.body.list); // 💥 Tambahkan ini
+            // const PromoReq = body.list;
+
             try {
                 
                 const newPromo = new PromoModel(PromoReq);
