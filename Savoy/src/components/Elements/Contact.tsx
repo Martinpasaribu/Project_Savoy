@@ -87,7 +87,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
 
   return (
 
-    <div className=''>
+    <div className='overflow-hidden'>
         
         <div className="p-4">
             <div className="grid sm:grid-cols-2 items-start gap-12 p-6 md:p-8 mx-auto max-w-4xl bg-white [box-shadow:0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">

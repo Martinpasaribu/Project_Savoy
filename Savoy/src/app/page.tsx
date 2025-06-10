@@ -62,7 +62,7 @@ export default function Home() {
 
         </div>
 
-        <div className="w-full hidden hp1:flex justify-center items-center hp1:max-w-[25rem] md:max-w-[30rem]  p-5">
+        <div className="w-full hidden mini:flex justify-center items-center max-w-[18rem] hp4:max-w-[25rem] md:max-w-[30rem]  p-5">
           <Image
             src="/assets/Image/home/discover.jpg"
             alt="MyApp Logo"

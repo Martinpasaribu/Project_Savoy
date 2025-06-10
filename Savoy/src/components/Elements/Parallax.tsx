@@ -26,7 +26,7 @@ export default function HeroParallax() {
             <div
               className="absolute inset-0 bg-cover bg-center bg-no-repeat"
               style={{
-                backgroundImage: 'url("/assets/image/parallax/leaf.jpg")',
+                backgroundImage: 'url("/assets/image/parallax/daun.jpg")',
               }}
             />
           </div>
