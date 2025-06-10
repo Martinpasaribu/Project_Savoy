@@ -2,34 +2,18 @@
 
 import { useState, useRef, useEffect } from 'react'
 import Image from 'next/image'
+import ContactModal from '@/components/Global/contact'
+import { CardType } from '@/models/promo_models'
 
 
-type image  = {
-  row: number,
-  image: string
-}
 
-type List  = {
-    head: string,
-    paragraph: string,
-    value: number
-}
-
-type CardType = {
-  price: string | null
-  title: string
-  list: List []| []
-  title2: string
-  desc: string | null
-  image: image [] | []
-  image_bg: string | null
-}
 
 
 export default function PromoPage() {
   const [activeIndex, setActiveIndex] = useState(0)
   const isScrolling = useRef(false) // untuk debounce
   const [cards, setCards] = useState<CardType[]>([])
+  const [isContactOpen, setIsContactOpen] = useState(false); // ✅ modal state
 
 
   useEffect(() => {
@@ -105,24 +89,24 @@ export default function PromoPage() {
               
               <div
                 key={index}
-                className="w-full max-w-[40rem] h-[420px] flex  flex-col justify-between items-center  bg-gradient-to-br from-white to-gray-50 text-black rounded-3xl p-8 shadow-2xl text-center relative overflow-hidden"
+                className="w-full max-w-[40rem] h-[420px] flex  flex-col justify-between items-center  bg-gradient-to-br from-white to-gray-50 text-black rounded-3xl p-4 pt-8 md:pt-2 md:p-8 shadow-2xl text-center relative overflow-hidden"
               >
                 {/* Badge Promo */}
-                <span className="absolute top-4 left-4 bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                <span className="absolute top-4 left-4 bg-slate-900 text-white text-[9px]  md:text-sm font-bold px-3 py-1 rounded-full shadow-md">
                   PROMO
                 </span>
 
-                <div className='flex flex-col justify-between items-center'>
+                <div className='flex flex-col justify-between items-center mt-2 md:mt-8'>
                     {/* Harga */}
                     {/* <p className="text-3xl font-extrabold text-[#a07c40] mb-3">{card.title}</p> */}
 
                     {/* Judul */}
-                    <h3 className="text-xl font-semibold uppercase tracking-wide mb-2 mt-5">
+                    <h3 className="text-md md:text-xl font-semibold uppercase tracking-wide mb-2 mt-5">
                       {card.title2}
                     </h3>
 
                     {/* Deskripsi */}
-                    <p className="text-gray-600 text-sm px-4 mb-8">{card.desc}</p>
+                    <p className="text-gray-600 text-xs md:text-sm px-4 mb-8">{card.desc}</p>
 
                     <div className=''>
 
@@ -131,7 +115,7 @@ export default function PromoPage() {
 
                         { card.list.map((item, index) => (
 
-                          <div key={index} className='flex gap-5'>
+                          <div key={index} className=' flex flex-col md:flex-row gap-5'>
                             
                             <div className="w-full max-w-[8rem] md:max-w-[11rem] ">
                               <Image
@@ -160,8 +144,8 @@ export default function PromoPage() {
                 </div>
 
                     {/* Tombol */}
-                    <button className="bg-[#a07c40] hover:bg-[#a07a38] transition-colors duration-200 text-white font-bold px-6 py-2 rounded-full shadow-md">
-                      Claim Now
+                    <button onClick={() => setIsContactOpen(true)} className="z-50 bg-[#a07c40] hover:bg-[#a07a38] transition-colors duration-200 text-white font-bold px-3 md:px-6 py-2 text-[13px] md:text-[17px] rounded-full shadow-md">
+                        Claim Now
                     </button>
 
                 {/* Background Shape */}
@@ -172,9 +156,8 @@ export default function PromoPage() {
               </div>
 
             ))}
+            
           </div>
-
-  \
 
 
           {/* Arrows Navigation */}
@@ -190,11 +173,14 @@ export default function PromoPage() {
           >
             ↓
           </button>
+
+           <ContactModal open={isContactOpen} onClose={() => setIsContactOpen(false)} value={false} />
+            
         </div>
 
 
       {/* Dots Navigation */}
-        <div className="absolute top-1/2 right-4 -translate-y-1/2 flex flex-col gap-3">
+        <div className="absolute top-1/2 right-1 md:right-4 -translate-y-1/2 flex flex-col gap-3">
           {cards.map((_, i) => (
             <button
               key={i}

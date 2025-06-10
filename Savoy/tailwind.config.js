@@ -10,6 +10,7 @@ module.exports = {
 
     screens: {
       
+      'mini': '200px',
       // Layar Hp ukuran minimum       (Potrait)
       'hp': '370px',
       

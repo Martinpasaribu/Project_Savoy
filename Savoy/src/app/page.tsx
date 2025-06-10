@@ -75,9 +75,9 @@ export default function Home() {
 
       <div className="relative w-full h-[600px] backdrop-blur-xs bg-gradient-to-l from-[#a48f6c] font-balham ">
 
-        <div className="px-5 py-10 ">
+        <div className="px-5 md:py-10 ">
 
-          <h2 className="text-[#a07c40] text-bold mb-5 text-[19px]">Experience sanctuary living</h2>
+          <h2 className="text-[#a07c40] text-bold mb-2 md:mb-5 pt-5 text-[19px]">Experience sanctuary living</h2>
 
           <p className="text-[12px] dark:text-gray-300">
             Comfort is our top priority.
@@ -129,8 +129,8 @@ export default function Home() {
         {/* Head */}
 
         <div className="text-center p-4">
-          <h1 className="text-[#a48f6c]">STRATEGIC</h1>
-          <p className="text-[15px] md:text-[30px] text-[#a48f6c] font-bold">LOCATION</p>
+          <h1 className="text-[15px] md:text-[22px] text-[#a48f6c] mt-4">Easy Access Strategic</h1>
+          {/* <p className="text-[15px] md:text-[23px] text-[#a48f6c] font-bold">LOCATION</p> */}
         </div>
 
         {/* Product */}

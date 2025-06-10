@@ -70,11 +70,29 @@ export default function CustomCarousel() {
 
   const targetRef = useRef<HTMLDivElement>(null);
 
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [currentIndexs, setCurrentIndexs] = useState(0);
+
+  const openModal = (index: number) => {
+    setCurrentIndexs(index);
+    setIsOpen(true);
+  };
+
+  const closeModal = () => setIsOpen(false);
+
+  const prevImage = () => {
+    setCurrentIndexs((prev) => (prev - 1 + wines.length) % wines.length);
+  };
+
+  const nextImage = () => {
+    setCurrentIndexs((prev) => (prev + 1) % wines.length);
+  };
+
   const scrollToSection = () => {
     targetRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
   
-
 
   const next = () => {
     if (currentIndex < maxIndex) {
@@ -92,7 +110,7 @@ export default function CustomCarousel() {
 
     <div className="space-y-5 font-balham">
 
-        <div className="flex flex-col justify-center md1:flex-row gap-2 bg-[#a48f6c] text-white min-h-screen pt-16 md:pt-[5rem] px-3 hp2:px-4 md2:px-10 ">
+        <div className="flex flex-col justify-center items-center md1:flex-row gap-2 bg-[#a48f6c] text-white min-h-screen pt-16 md:pt-[5rem] px-3 hp2:px-4 md2:px-10 ">
 
           {/* Left Section */}
           <div className="w-full max-w-[50rem] flex flex-col justify-between ">
@@ -120,8 +138,9 @@ export default function CustomCarousel() {
                   key={currentIndex} // <== ini bikin div remount dan animasi ulang
                   className="mt-10 w-full max-w-[45rem] flex flex-col md:flex-col justify-center sm:justify-start items-center sm:items-start"
                 >
-                  <h2 className="font-semibold mb-5 text-[18px] hp2:text-left">Facilities</h2>
-                  <div className="flex flex-wrap justify-center gap-4 text-sm  opacity-0 translate-y-[-20px] animate-fadeSlideDown">
+                  <h2 className="font-semibold md:mb-5 text-[18px] text-left hp4:text-center md2:text-left w-full">Facilities</h2>
+
+                  <div className="hidden md:flex flex-wrap justify-center gap-4 text-sm  opacity-0 translate-y-[-20px] animate-fadeSlideDown">
                     {wines[currentIndex].list.map((item, idx) => (
                       <p key={idx} className="p-1 px-2 hp1:px-4 text-[10px] md:text-[13px] bg-white border-gray-200 text-[#a48f6c] border-[1px] rounded-3xl">{item}</p>
                     ))}
@@ -135,56 +154,72 @@ export default function CustomCarousel() {
             </div>
           </div>
 
-          {/* Right Section */}
-          <div className="w-full max-w-[26rem] relative overflow-hidden ">
-            {/* Track */}
-            <div
-              className="flex transition-transform duration-500"
-              style={{
-                transform: `translateX(-${currentIndex * slideWidth}px)`,
-              }}
-            >
-              {wines.map((wine, idx) => (
-                <div
-                  key={idx}
-                  className="min-w-[350px] flex flex-col items-center text-center px-4 "
-                >
-                  <Image
-                    src={wine.image}
-                    alt={wine.name}
-                    width={250}
-                    height={500}
-                    className="mb-6 rounded-lg"
-                  />
-                  {/* <h3 className="text-base font-light">{wine.name}</h3> */}
-                  <p className="text-sm mt-1">{wine.price}</p>
-                </div>
+
+        <div className="flex flex-col hp3:flex-row gap-5">
+
+          {wines[currentIndex].list && (
+            <div  key={currentIndex} className="flex md:hidden flex-wrap hp3:flex-col hp3:h-[270px] gap-4 justify-center text-sm  opacity-0  animate-fadeSlideDown">
+              {wines[currentIndex].list.map((item, idx) => (
+                <p key={idx} className="p-1 px-2 hp1:px-4 text-[10px] md:text-[13px] bg-white border-gray-200 text-[#a48f6c] border-[1px] rounded-3xl">{item}</p>
               ))}
             </div>
+          )}
 
-            {/* Buttons */}
-            <button
-              onClick={prev}
-              disabled={currentIndex === 0}
-              className={clsx(
-                "absolute left-[2rem] bottom-[.5rem] -translate-y-1/2 bg-white/30 text-[#a17d41] w-10 h-10 rounded-full flex items-center justify-center shadow-lg font-semibold",
-                currentIndex === 0 && "opacity-50 cursor-not-allowed"
-              )}
-            >
-              <ArrowLeft />
-            </button>
+            {/* Right Section */}
+            <div className="w-full max-w-[20rem] md2:max-w-[24rem] relative overflow-hidden ">
 
-            <button
-              onClick={next}
-              disabled={currentIndex === maxIndex}
-              className={clsx(
-                "absolute right-[6rem] bottom-[.5rem] -translate-y-1/2 bg-white/30 text-[#a17d41] w-10 h-10 rounded-full flex items-center justify-center shadow-lg font-semibold",
-                currentIndex === maxIndex && "opacity-50 cursor-not-allowed"
-              )}
-            >
-              <ArrowRight />
-            </button>
-          </div>
+              {/* Track */}
+              <div
+                className="flex transition-transform duration-500"
+                style={{
+                  transform: `translateX(-${currentIndex * slideWidth}px)`,
+                }}
+              >
+                {wines.map((wine, idx) => (
+                  <div
+                    key={idx}
+                    className="min-w-[350px] flex flex-col items-center text-center px-4 "
+                  >
+                    <Image
+                      src={wine.image}
+                      alt={wine.name}
+                      width={250}
+                      height={500}
+                      className="mb-6 rounded-lg max-w-[180px] md:max-w-[220px]"
+                    />
+                    {/* <h3 className="text-base font-light">{wine.name}</h3> */}
+                    <p className="text-sm mt-1">{wine.price}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <button
+                onClick={prev}
+                disabled={currentIndex === 0}
+                className={clsx(
+                  "absolute left-[2rem] bottom-[.5rem] -translate-y-1/2 bg-white/30 text-[#a17d41] w-10 h-10 rounded-full flex items-center justify-center shadow-lg font-semibold",
+                  currentIndex === 0 && "opacity-50 cursor-not-allowed"
+                )}
+              >
+                <ArrowLeft />
+              </button>
+
+              <button
+                onClick={next}
+                disabled={currentIndex === maxIndex}
+                className={clsx(
+                  "absolute right-[2rem] hp4:right-[1rem] md2:right-[6rem] bottom-[.5rem] -translate-y-1/2 bg-white/30 text-[#a17d41] w-10 h-10 rounded-full flex items-center justify-center shadow-lg font-semibold",
+                  currentIndex === maxIndex && "opacity-50 cursor-not-allowed"
+                )}
+              >
+                <ArrowRight />
+              </button>
+              
+            </div>
+
+        </div>
+          
         </div>
 
         <div ref={targetRef} className="flex flex-col  gap-2 md2:gap-10  min-h-screen px-4 md2:px-[3rem] py-16 text-[#a17d41]">
@@ -232,7 +267,7 @@ export default function CustomCarousel() {
             </div>
 
             {/* Track */}
-            <div
+            {/* <div
               className="flex-center "
           
             >
@@ -248,12 +283,53 @@ export default function CustomCarousel() {
                     height={500}
                     className="mb-6"
                   />
-                  {/* <h3 className="text-base font-light">{wine.name}</h3> */}
+                  <h3 className="text-base font-light">{wine.name}</h3>
                   <p className="text-sm mt-1 ">{wine.price}</p>
                 </div>
               ))}
-            </div>
+            </div> */}
 
+
+      {/* Gallery */}
+      <div className="flex flex-wrap justify-center gap-4">
+        {wines.map((wine, idx) => (
+          <div
+            key={idx}
+            className="cursor-pointer text-center"
+            onClick={() => openModal(idx)}
+          >
+            <Image
+              src={wine.image}
+              alt={wine.name}
+              width={250}
+              height={500}
+              className="mb-2"
+            />
+            <p className="text-sm">{wine.price}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Modal */}
+      {isOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center">
+          <button onClick={closeModal} className="absolute top-4 mini:left-4 text-white text-xl font-sans border-gray-100 border-[1px] rounded-xl p-1">close</button>
+
+          <button onClick={prevImage} className="absolute left-4 text-white text-4xl">←</button>
+
+          <div className="max-w-[50%] hp4:max-w-[10%] md:max-w-[20%] max-h-[100%]">
+            <Image
+              src={wines[currentIndexs].image}
+              alt="preview"
+              width={600}
+              height={800}
+              className="object-contain mx-auto"
+            />
+          </div>
+
+          <button onClick={nextImage} className="absolute right-4 text-white text-4xl">→</button>
+        </div>
+      )}
         </div>
 
     </div>

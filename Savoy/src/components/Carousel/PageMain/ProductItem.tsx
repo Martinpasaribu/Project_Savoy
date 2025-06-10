@@ -78,7 +78,7 @@ export default function CarouselItemProduct() {
           {/* Slide wrapper */}
           <div className="overflow-hidden w-full ">
             <div
-              className="flex transition-transform duration-500 gap-2 sm:gap-6 p-2"
+              className="flex transition-transform duration-500 gap-2 sm:gap-2 p-1"
               style={{
                 transform: `translateX(-${current * (100 / visibleCount)}%)`,
               }}
@@ -86,10 +86,10 @@ export default function CarouselItemProduct() {
               {slides.map((slide, index) => (
                 <div
                   key={index}
-                  className=" w-[8rem] rounded-3xl p-2 sm:p-4 text-center shrink-0 bg-white/10 shadow-sm dark:bg-[rgb(238,238,238)] backdrop-blur"
-                  style={{ minWidth: `${96 / visibleCount}%` }}
+                  className=" w-full max-w-[20rem] flex-center flex-col rounded-3xl p-2 sm:p-4 text-center shrink-0 bg-white/10 shadow-sm dark:bg-[rgb(238,238,238)] backdrop-blur border-[1px] border-[#cdba9a]"
+                  style={{ minWidth: `${99 / visibleCount}%` }}
                 >
-                  <div className="flex justify-center items-center w-full h-[18rem]">
+                  <div className="flex justify-center items-center w-full h-[18rem] max-w-[25rem]">
                     <Image
                       src={slide.img}
                       alt={`slide-${index}`}
@@ -98,6 +98,7 @@ export default function CarouselItemProduct() {
                       className=" transition-transform duration-300 transform hover:scale-110 h-[16rem]"
                     />
                   </div>
+
                   <p className="mt-4 text-sm text-white">{slide.text}</p>
                 </div>
               ))}

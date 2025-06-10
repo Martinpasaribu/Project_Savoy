@@ -60,6 +60,7 @@ export default function Navbar() {
             <Link href="/">HOME</Link>
             <Link href="/about">ABOUT US</Link>
             <Link href="/unit">THE UNIT</Link>
+            <Link href="/location">LOCATION</Link>
             <button onClick={() => setIsContactOpen(true)}>CONTACT US</button> {/* ✅ */}
             {/* <Link href="/partner">NEWS AND UPDATE</Link> */}
             <Link href="/promo" className="relative inline-block w-[2.5rem] h-8 flex-center">
@@ -122,11 +123,9 @@ export default function Navbar() {
             <Link href="/about" onClick={toggleMenu}>About</Link>
             <Link href="/unit" onClick={toggleMenu}>The Unit</Link>
             <Link href="/promo" onClick={toggleMenu}>Promo</Link>
-            <button
-              onClick={() => {
-                setIsContactOpen(true); // ✅ buka modal
-                toggleMenu();
-              }}
+            <Link href="/location" onClick={toggleMenu}>Location</Link>
+            <button className="bg-white text-slate-700 rounded-md p-1"
+              onClick={() => { setIsContactOpen(true);  toggleMenu(); }}
             >
               Contact
             </button>
@@ -148,7 +147,7 @@ export default function Navbar() {
       {/* <div className="h-[80px] md:h-[80px]" /> */}
 
       {/* ✅ Reusable Contact Modal */}
-      <ContactModal open={isContactOpen} onClose={() => setIsContactOpen(false)} />
+      <ContactModal open={isContactOpen} onClose={() => setIsContactOpen(false)} value={true}  />
     </>
   );
 }

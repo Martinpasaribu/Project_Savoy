@@ -11,9 +11,10 @@ import toast from 'react-hot-toast';
 interface ContactModalProps {
   open: boolean;
   onClose: () => void;
+  value: boolean;
 }
 
-export default function ContactModal({ open, onClose }: ContactModalProps) {
+export default function ContactModal({ open, onClose, value }: ContactModalProps) {
 
   const dispatch = useAppDispatch();
   const [isLoading, setIsLoading] = useState(false);
@@ -102,10 +103,13 @@ export default function ContactModal({ open, onClose }: ContactModalProps) {
         >
           <X />
         </button>
-        <h2 className="text-xl font-bold mb-4 text-black dark:text-white">Contact Us</h2>
+        <h2 className="text-xl font-bold mb-4 text-black dark:text-white">
+          Contact Us
+          {value === false && <span className="text-purple-500 text-[11px] bg-purple-50 border-[1px] border-purple-300 rounded-md p-1 ml-4"> With Promo</span>}
+        </h2>
         
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit} className="text-sm"
         >
           <input
             type="text" 
