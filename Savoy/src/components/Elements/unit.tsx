@@ -313,7 +313,7 @@ export default function CustomCarousel() {
       {/* Modal */}
       {isOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-80 z-50 flex items-center justify-center">
-          <button onClick={closeModal} className="absolute top-4 mini:left-4 text-white text-xl font-sans border-gray-100 border-[1px] rounded-xl p-1">close</button>
+          <button onClick={closeModal} className="absolute top-[4rem] md:top-4 mini:left-4 text-white text-xl font-sans border-gray-100 border-[1px] rounded-xl p-1">close</button>
 
           <button onClick={prevImage} className="absolute left-4 text-white text-4xl">←</button>
 

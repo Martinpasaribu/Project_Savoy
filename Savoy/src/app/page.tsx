@@ -33,7 +33,7 @@ export default function Home() {
 
       </div>
 
-      <div className="relative flex flex-col-reverse md:flex-row justify-around items-center font-balham w-full h-screen">
+      <div className="relative flex flex-col-reverse md:flex-row justify-around items-center  w-full h-screen">
 
         <div className="absolute w-[5rem] md:w-[6.8rem] bottom-0 -right-[3px] rotate-90">
           <Image
@@ -47,12 +47,12 @@ export default function Home() {
         <div className="flex flex-col justify-center items-center md1:items-start py-4 px-3 hp1:px-8  md:px-5 md:py-5 w-full md:w-[35rem] h-full gap-5">
 
 
-            <h1 className="text-[16px] md:text-[18px] leading-tight text-center hp1:text-left text-[#9f8355] max-w-[20rem]">
+            <h1 className="text-[16px] md:text-[18px] leading-tight text-center hp1:text-left text-[#9f8355] max-w-[20rem] font-balham">
               Discover a world of comfort
               and elegance
             </h1>
 
-            <p className="text-[10px] md:text-[13px] w-full md:max-w-[32rem] text-justify text-slate-700 dark:text-gray-300 font-thin">
+            <p className="text-[10px] md:text-[13px] w-full md:max-w-[32rem] text-justify text-slate-500 dark:text-gray-300  ">
               Indulge in the epitome of luxury living with classic modern townhouses at Savoy Residences in Bintaro, 
               South Jakarta. Each residence is thoughtfully designed to provide unparalleled comfort and elegance, 
               with high-end finishes that create a serene atmosphere. Whether you`re unwinding in your living room or hosting 
@@ -63,7 +63,7 @@ export default function Home() {
 
         </div>
 
-        <div className="w-full hidden mini:flex justify-center items-center max-w-[18rem] hp4:max-w-[25rem] md:max-w-[30rem]  p-5">
+        <div className="w-full hidden mini:flex justify-center items-center max-w-[20rem] hp4:max-w-[25rem] md:max-w-[30rem] pt-[4rem] p-2 md:p-5">
           <Image
             src="/assets/Image/home/discover.jpg"
             alt="MyApp Logo"
@@ -74,7 +74,7 @@ export default function Home() {
 
       </div>
 
-      <div className="relative w-full h-[600px] backdrop-blur-xs bg-gradient-to-l from-[#a48f6c] font-balham ">
+      <div className="relative w-full h-[600px] md:h-[800px] backdrop-blur-xs bg-gradient-to-l from-[#a48f6c] font-balham ">
 
         <div className="px-5 md:py-10 ">
 
@@ -90,13 +90,14 @@ export default function Home() {
 
         </div>
 
-        <div className='absolute z-20 w-full  '>
+        <div className='absolute z-20 w-full '>
 
           <CarouselItemProduct/>
 
         </div>
 
       </div>
+
 
       <div className="flex flex-col relative pb-[5rem] font-balham ">
 
@@ -137,15 +138,17 @@ export default function Home() {
 
         {/* Product */}
 
-        <div className="pt-10 ">
+        <div className="pt-10 w-full py-[8rem]">
           <CarouselLocation/>
         </div>
 
       </div>
 
+
       <div>
         <HeroParallax/>
       </div>
+
 
       <div className="flex-center p-[.2rem] md:p-[6rem] relative bg-pattern bg-no-repeat bg-cover bg-top bg-[#f8f8f8]">
 

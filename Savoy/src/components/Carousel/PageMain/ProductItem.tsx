@@ -5,7 +5,7 @@ import Image from "next/image";
 
 const slides = [
   {
-    img: "/assets/Image/Carousel/Item_Product/dining_room.jpg",
+    img: "/assets/Image/Carousel/Item_Product/dining_room.png",
     text: `Dining Room`,
   },
   {
@@ -58,7 +58,7 @@ export default function CarouselItemProduct() {
 
   return (
 
-    <div className="py-5 absolute top-2 overflow-hidden w-full">
+    <div className="absolute top-2 overflow-hidden w-full pt-[2rem] md:mt-[3rem]">
 
       <div className="max-w-6xl mx-auto px-4 ">
 

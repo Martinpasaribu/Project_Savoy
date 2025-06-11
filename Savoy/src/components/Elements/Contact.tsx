@@ -90,15 +90,15 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
     <div className='overflow-hidden'>
         
         <div className="p-4">
-            <div className="grid sm:grid-cols-2 items-start gap-12 p-6 md:p-8 mx-auto max-w-4xl bg-white [box-shadow:0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
+            <div className="grid sm:grid-cols-2 items-start gap-12 m-5 p-6 md:p-8 mx-auto max-w-4xl bg-white [box-shadow:0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-md">
                 <div>
-                <h1 className="text-slate-900 text-3xl font-semibold">Let`s Talk</h1>
-                <p className="text-sm text-slate-500 mt-4 leading-relaxed">
+                <h1 className="text-slate-900 text-xl md:text-3xl font-semibold font-balham">Let`s Talk</h1>
+                <p className=" text-xs md:text-sm text-slate-500 mt-4 leading-relaxed ">
                     Ready to make your move to Savoy? Our team is here to answer your questions and help you take the next step.
                 </p>
 
-                <div className="mt-12">
-                    <h2 className="text-slate-900 text-base font-semibold">Email</h2>
+                <div className="mt-6 md:mt-12">
+                    <h2 className="text-slate-900 text-[11px] md:text-base font-semibold font-balham">Email</h2>
                     <ul className="mt-4">
                     <li className="flex items-center">
                         <div className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
@@ -110,7 +110,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                         </svg>
                         </div>
                         <a href="javascript:void(0)" className="text-sm ml-4">
-                        <small className="block text-slate-900">Mail</small>
+                        <small className="block text-slate-900 font-balham">Mail</small>
                         <span className="text-[#a48f6c] font-medium">araestablishment@gmail.com</span>
                         </a>
                     </li>
@@ -118,7 +118,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                 </div>
 
                 <div className="mt-12">
-                    <h2 className="text-slate-900 text-base font-semibold">Socials</h2>
+                    <h2 className="text-slate-900 text-[11px] md:text-base  font-semibold font-balham">Socials</h2>
 
                     <ul className="flex mt-4 space-x-4">
                     <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
@@ -144,7 +144,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                     </li>
 
                     <li className="bg-[#e6e6e6cf] h-10 w-10 rounded-full flex items-center justify-center shrink-0">
-                        <a href="https://wa.me/62821190000777" target="_blank" rel="noopener noreferrer">
+                        <a href="https://wa.me/6281190000777" target="_blank" rel="noopener noreferrer">
                             <Icon iconName={'whatsapp'} size={'10'}/>
                       
                         </a>
@@ -167,7 +167,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                         value={contact.name}
                         onChange={handleChange}
                         placeholder='Name'
-                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-[#a38b61]" />
+                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-[11px] md:text-sm outline-0 focus:border-[#a38b61]" />
                         
                     
                     <input 
@@ -177,7 +177,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                         value={contact.email}
                         onChange={handleChange} 
                         placeholder='Email'
-                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-[#a38b61]" />
+                        className="w-full text-slate-900 rounded-md py-2.5 px-4 border border-gray-300 text-[11px] md:text-sm outline-0 focus:border-[#a38b61]" />
                     
                     <input 
                         type='tels' 
@@ -186,7 +186,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                         onChange={handleChange}
                         placeholder="Phone"
                         required
-                        className="w-full text-slate-400 rounded-md py-2.5 px-4 border border-gray-300 text-sm outline-0 focus:border-[#a38b61]" />
+                        className="w-full text-slate-400 rounded-md py-2.5 px-4 border border-gray-300 text-[11px] md:text-sm outline-0 focus:border-[#a38b61]" />
                     
                     <textarea 
                         id="message" 
@@ -197,7 +197,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                         onChange={handleChange}
                         required
 
-                        className="w-full text-slate-900 rounded-md px-4 border border-gray-300 text-sm pt-2.5 outline-0 focus:border-[#a38b61]">   
+                        className="w-full text-slate-900 rounded-md px-4 border border-gray-300 text-[11px] md:text-sm pt-2.5 outline-0 focus:border-[#a38b61]">   
                     </textarea>
                     
                     {/* <button type='button'
