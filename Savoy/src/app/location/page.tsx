@@ -1,27 +1,37 @@
 'use client'
 
 import MapEmbed from './components/MapEmbed'
+import { motion } from 'framer-motion'
+
+
 
 export default function LocationPage() {
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-black via-gray-900 to-black text-white font-balham">
-      <div className="min-h-screen flex flex-col md:flex-row items-center justify-center px-1 py-16 space-y-10">
+   
+   <motion.section
+  initial={{ opacity: 0, y: 50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="relative flex-center min-h-screen bg-gradient-to-b from-[#A48F6C] via-[#A58958] to-[#9D7C42] text-white font-balham py-16 px-4"
+>
+    <div className="container mx-auto flex flex-col-reverse md:flex-row items-center justify-center gap-12">
         
-        {/* Title and Description */}
-        <div className="text-center max-w-2xl">
-          <h2 className=" text-lg hp4:text-2xxl md:text-4xl font-extrabold mb-4 text-[#]">
-            Find our location
+        {/* Left: Text Content */}
+        <div className="text-center md:text-left max-w-xl space-y-6">
+          <h2 className="text-2xl md:text-4xl font-extrabold drop-shadow-md">
+            Find Our Location
           </h2>
-          <p className="text-gray-300 text-[12px] md:text-lg">
-            View the interactive map to find the location of Savoy Residences. Easy access, strategic location, and comfortable environment await you.
+          <p className="text-gray-200 text-sm md:text-lg leading-relaxed">
+            Discover the exact location of Savoy Residences through our interactive map.
+            Enjoy easy access, a strategic neighborhood, and a tranquil environment just a click away.
           </p>
         </div>
 
-        {/* Map */}
-        <div className="w-full max-w-4xl">
+        {/* Right: Map */}
+        <div className="w-full max-w-[40rem] rounded-xl overflow-hidden shadow-2xl border border-white/20 transition-transform duration-300 hover:scale-[1.01]">
           <MapEmbed />
         </div>
       </div>
-    </section>
+</motion.section>
   )
 }

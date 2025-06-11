@@ -54,7 +54,7 @@ export default function AboutPage() {
               <p className="text-left text-[11px] hp1:text-[14px] font-light text-gray-500 mb-10 ">
                 Welcome to Savoy Residences, where luxurious comfort meets the essence of sanctuary living. Created with care and vision, Savoy Residences is thoughtfully designed for those who seek balance, harmony, and a sense of belonging.
 
-                Perfectly situated with seamless access to major toll roads, business districts, renowned schools, and lifestyle destinations, Savoy keeps you connected to everything that matters 
+                Perfectly situated with seamless access to major toll roads, business districts, renowned schools, and lifestyle destinations, Savoy keeps you connected to everything that matters.
 
               </p>
               

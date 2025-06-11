@@ -94,7 +94,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
                 <div>
                 <h1 className="text-slate-900 text-3xl font-semibold">Let`s Talk</h1>
                 <p className="text-sm text-slate-500 mt-4 leading-relaxed">
-                    Explore luxurious living at Savoy Residences. If you have any questions or need assistance, our friendly and knowledgeable team is here to help.
+                    Ready to make your move to Savoy? Our team is here to answer your questions and help you take the next step.
                 </p>
 
                 <div className="mt-12">

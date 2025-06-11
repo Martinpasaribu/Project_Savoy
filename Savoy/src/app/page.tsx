@@ -52,11 +52,12 @@ export default function Home() {
               and elegance
             </h1>
 
-            <p className="text-[10px] md:text-[13px] w-full md:max-w-[30rem] text-justify text-slate-700 dark:text-gray-300 font-thin">
+            <p className="text-[10px] md:text-[13px] w-full md:max-w-[32rem] text-justify text-slate-700 dark:text-gray-300 font-thin">
               Indulge in the epitome of luxury living with classic modern townhouses at Savoy Residences in Bintaro, 
               South Jakarta. Each residence is thoughtfully designed to provide unparalleled comfort and elegance, 
               with high-end finishes that create a serene atmosphere. Whether you`re unwinding in your living room or hosting 
-              gatherings, you`ll relish the meticulous attention to detail. Experience a new level of elegance at Savoy Residences` townhouse community. Savoy residences presents a 3-storey house with a private pool.
+              gatherings, you`ll relish the meticulous attention to detail. 
+              Experience sophisticated living at Savoy Residences, a 3-storey home thoughtfully designed with a private pool for your daily escape.
             </p>
 
 
@@ -128,9 +129,10 @@ export default function Home() {
 
         {/* Head */}
 
-        <div className="text-center p-4">
-          <h1 className="text-[15px] md:text-[22px] text-[#a48f6c] mt-4">Easy Access Strategic</h1>
+        <div className=" flex-center flex-col text-center p-4 mt-5">
+          <h1 className="text-[15px] md:text-[22px] text-[#a48f6c] mt-4 mb-4">Strategic Location </h1>
           {/* <p className="text-[15px] md:text-[23px] text-[#a48f6c] font-bold">LOCATION</p> */}
+          <p className="text-sm w-full max-w-[40rem]">Tucked in a prime area of South Jakarta, Savoy Residences offers seamless access to toll roads, top schools, business districts, and lifestyle hubs—so you’re always connected to what matters most.</p>
         </div>
 
         {/* Product */}

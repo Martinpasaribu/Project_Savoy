@@ -20,15 +20,15 @@ const slides = [
   
   {
     img: "/assets/Image/Carousel/Item_Product/sitting_room.jpg",
-    text: `Sitting room`,
+    text: `Living room`,
   },
   {
     img: "/assets/Image/Carousel/Item_Product/extra_space2.jpg",
-    text: `Extra Space`,
+    text: `Home Office or Study room`,
   },
   {
     img: "/assets/Image/Carousel/Item_Product/swiming_pool.jpg",
-    text: `Swimming pool`,
+    text: `Private pool`,
   },
 
 ];
